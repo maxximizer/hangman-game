@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'AllerDisplay';
+    src: url("../fonts/AllerDisplay.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$head_width: 90px;
+$background_color:#3B4163;
+$inner_color:	#F5F5F5;
+$skin_color:	#FFCE89;
+$hanger_color:#4D5258;
+$scar_color: #FFC87F;
+$beard_color:#E9C68E;
+$mouth_color:white;
+$blue_color: #365C8F;
+$light_blue:#4D71FA;
+$light_green:#88C657;
+$dark_green:#53A06E;
+$guess_word:	#E6E6E8;
+$guessed_word:#52555C;
+
+
+*:before, *:after {
+  content: "";
+  position: absolute;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $background_color;
+  z-index: 10;
+}
+.inner {
+  position: absolute;
+  width: 80%;
+  height: 600px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $inner_color;
+  border-radius:12px;
+
+}
+.hanger{
+position: absolute;
+width: 130px;
+height: 20px;
+border-radius: 0 4px 4px 0;
+background-color: $hanger_color;
+top:9%;
+&:after{
+  width: 20px;
+  height: 65px;
+  left:70%;
+  background-color: $hanger_color;
+}
+}
+.hangman{
+  position: relative;
+  width: 130px;
+  height: 300px;
+  display: inline-block;
+
+  top:20%;
+  left:8px;
+}
+.head, .hair, .hat, .glasses, .eyes, .nose, .beard {
+  position: absolute;
+
+}
+/*======================================
+Head
+======================================*/
+.head { /* head */
+  z-index: 1;
+  height: 108px;
+  width: 74px;
+  background-color: $skin_color;
+  border-radius: 40px;
+  margin-left: -5%;
+  left: 50%;
+&:before { /* ears */
+  height: 0;
+  width: 99px;
+  background-color: $skin_color;
+  border-top: 26px solid $skin_color;
+  border-radius: 12px;
+  margin-left: -45px;
+  top: 40%;
+  left: 44%;
+}
+
+&:after { /* scar */
+  width:8px;
+   height:9px;
+    border:solid 2px $scar_color;
+    border-color:transparent transparent transparent  $scar_color;
+    border-radius: 92px 0 0 218%/46px;
+  top:10%;
+  left: 23%;
+}
+}
+.eyes { /* Pupil */
+  width:100%;
+  top:27%;
+  left:-3px;
+  li{
+    display: inline-block;
+    border-radius: 50%;
+    list-style: none;
+  height: 10px;
+  width: 10px;
+background-color: $hanger_color;
+  margin-left: -20px;
+  margin-right: 44px;
+  top: 80px;
+  left: 50%;
+
+}
+}
+.beard { /* beard */
+
+
+    height: 36px;
+    width: 74px;
+    background-color: $beard_color;
+    border-radius: 0 0 40px 40px;
+    left: 0;
+    top:69%;
+}
+@mixin beard_cut{
+  background:$skin_color;
+  z-index:1;
+width: 28px;
+height: 13px;
+border-radius: 5px;
+position: absolute;
+top:62%;
+}
+.beard_cut_left{
+  @include beard_cut;
+  transform:rotate(-26deg);
+  left:4px;
+}
+.beard_cut_right{
+    @include beard_cut;
+  transform:rotate(26deg);
+right:4px;
+}
+
+.nose{
+  z-index:1;
+  height:13px;
+  width:13px;
+  border-radius: 50%;
+  left:43%;
+  top:64%;
+  background-color: $skin_color;
+}
+.mouth{
+  height: 10px;
+  width: 22px;
+  border-radius: 15px 15px 0 0 ;
+  background-color: $mouth_color;
+  position: absolute;
+  left:36%;
+  top: 31%;
+}
+
+@mixin earings{
+height: 4px;
+width:4px;
+border-radius: 50%;
+background-color: $blue_color;
+z-index: 1;
+position: absolute;
+}
+.earings_mouth{
+  @include earings ;
+left: 28%;
+top:84%;
+}
+
+.earings_right_ear{
+  @include earings ;
+left: 102%;
+top:63%;
+}
+.neck{
+  height: 25px;
+  width: 20px;
+  border-radius: 4px;
+  background-color: $skin_color;
+  position: absolute;
+  top:34%;
+  left:66%;
+}
+.body{
+  position: relative;
+  width:63px;
+  height:99px;
+  left:50%;
+  top:42%;
+
+}
+
+
+@mixin rectangle($width,$height,$color,$deg,$r1,$r2,$r3,$r4) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  transform:rotate($deg);
+  border-radius: $r1 $r2 $r3 $r4;
+}
+.first_rectangle{
+  @include rectangle(50%,70%,$light_green,0,4px,0,0,4px) ;
+  float:left;
+  display: inline-block;
+}
+.second_rectangle{
+  @include rectangle(50%,70%,$dark_green,0,0,4px,4px,0) ;
+  float:left;
+  display: inline-block;
+}
+.third_rectangle{
+  @include rectangle(100%,30%,$blue_color,0,0,0,4px,4px) ;
+  float:left;
+  display: block;
+}
+.left_sleeve{
+    @include rectangle(30px,71px,$light_green,45deg,4px,0,0,4px) ;
+    position: absolute;
+    left:28%;
+    top:42%;
+}
+
+.right_sleeve{
+    @include rectangle(30px,71px,$dark_green,-45deg,4px,0,0,4px) ;
+    position: absolute;
+    left:96%;
+    top:42%;
+}
+@mixin hand($deg) {
+  height: 10px;
+  width: 22px;
+  border-radius: 15px 15px 0 0 ;
+  background-color: $skin_color;
+  position: absolute;
+  transform: rotate($deg);
+}
+.left_hand{
+  @include hand(-135deg);
+  left:10%;
+  top:62%;
+}
+.right_hand{
+  @include hand(135deg);
+  left:120%;
+  top:62%;
+}
+
+.right_leg{
+    @include rectangle(30px,96px,$blue_color,-11deg,4px,4px,4px,4px) ;
+    position: absolute;
+    left:83%;
+    top:69%;
+    z-index:1
+}
+
+.left_leg{
+    @include rectangle(30px,96px,$blue_color,11deg,4px,4px,4px,4px) ;
+    position: absolute;
+    left:43%;
+    top:69%;
+    z-index:1
+}
+.right_foot{
+    @include rectangle(49px,19px,$skin_color,-11deg,8px,8px,8px,8px) ;
+    position: absolute;
+    left:93%;
+    top:97%;
+}
+.left_foot{
+    @include rectangle(49px,19px,$skin_color,11deg,8px,8px,8px,8px) ;
+    position: absolute;
+    left:19%;
+    top:97%;
+}
+
+.missed_words{
+  font-family: "AllerDisplay";
+color:$hanger_color;
+  display: inline-block;
+  position:absolute;
+  right:50%;
+  top:10%;
+  z-index:1;
+  h1{
+    color:$light_blue;
+    font-size: 60px;
+    line-height: 0;
+    letter-spacing: 20px;
+  }
+}
+.triangle{
+z-index: 0!important;
+position: absolute;
+right:-30px;
+bottom:-133px;
+
+	width: 0;
+	height: 0;
+	border-top: 205px solid transparent;
+	border-bottom: 205px solid transparent;
+
+	border-left: 205px solid $light_blue;
+transform: rotate(45deg);
+}
+#word{
+position: absolute;
+bottom:0;
+width: 100%;
+z-index: 1;
+opacity: 0.6;
+  li{
+    list-style: none;
+      display: inline-block;
+    background-color: $guess_word;
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    border-radius: 4px;
+  }
+
+}
