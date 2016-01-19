@@ -52,6 +52,9 @@ body {
 /*======================================
 Head
 ======================================*/
+.display {
+  display: none; }
+
 .head {
   /* head */
   z-index: 1;
@@ -327,7 +330,8 @@ Head
   bottom: 0;
   width: 100%;
   z-index: 1;
-  opacity: 0.6; }
+  opacity: 0.9;
+  left: -21px; }
   #correct li {
     font-family: "AllerDisplay";
     display: inline-block;

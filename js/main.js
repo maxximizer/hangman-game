@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var kpc = $('#kpc');
     var kdc = $('#kdc');
     var kuc = $('#kuc');
-var geusses=[];
+    var geusses=[];
+    var hangman_body=["head","neck","body","right_sleeve","left_sleeve","right_hand","left_hand","right_leg","left_leg","right_foot","left_foot"]
 
 var word="Hangman".toUpperCase();
 var word_splited=word.split('');
 var word_length=word_splited.length;
-
+var counter=0;
 for (i=0;i<word.length;i++){
 $("li[data-pos=" +(11-(word.length- i)) + "]").css("background-color", "#4D5258");
 }
@@ -25,7 +26,10 @@ $("li[data-pos=" +(11-(word.length- i)) + "]").css("background-color", "#4D5258"
         if(word.indexOf(geusses[geusses.length-1]) == -1){
         var li = $("<li>").text(geusses[geusses.length-1]);
         $("#wyniki").append(li);
-                                                        }
+counter+=1;
+var part_of_body=$("#"+hangman_body[counter-1]);
+
+part_of_body.removeClass("display");                                                }
       else{
         //var li = $("<li>").text(geusses[geusses.length-1]);
         //$("#correct").append(li);
