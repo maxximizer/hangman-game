@@ -44,10 +44,12 @@ $background_color:#3B4163;
 $inner_color:	#F5F5F5;
 $skin_color:	#FFCE89;
 $hanger_color:#4D5258;
+
 $scar_color: #FFC87F;
 $beard_color:#E9C68E;
 $mouth_color:white;
 $blue_color: #365C8F;
+$light_grey: 	#E6E6E8;
 $light_blue:#4D71FA;
 $light_green:#88C657;
 $dark_green:#53A06E;
@@ -96,11 +98,11 @@ top:9%;
 }
 
 .hangman{
-  position: relative;
+  position: absolute;
   width: 130px;
   height: 300px;
   display: inline-block;
-  top:20%;
+  top:19%;
   left:8px;
 }
 
@@ -140,7 +142,7 @@ Head
     left: 23%;
 }
 }
-.eyes { /* Pupil */
+.eyes { /* eyes */
   width:100%;
   top:27%;
   left:-3px;
@@ -293,21 +295,6 @@ top:63%;
     top:97%;
 }
 
-.missed_words{
-  font-family: "AllerDisplay";
-  color:$hanger_color;
-  display: inline-block;
-  position:absolute;
-  right:50%;
-  top:10%;
-  z-index:1;
-  h1{
-    color:$light_blue;
-    font-size: 60px;
-    line-height: 0;
-    letter-spacing: 20px;
-  }
-}
 .triangle{
 z-index: 0!important;
 position: absolute;
@@ -321,20 +308,55 @@ bottom:-133px;
 	border-left: 205px solid $light_blue;
   transform: rotate(45deg);
 }
-#word{
-position: absolute;
-bottom:0;
-width: 100%;
-z-index: 1;
-opacity: 0.6;
-  li{
-    list-style: none;
-    display: inline-block;
-    background-color: $guess_word;
-    width: 75px;
-    height: 75px;
-    margin: 5px;
-    border-radius: 4px;
-  }
 
+.missed_words{
+  font-family: "AllerDisplay";
+  color:$hanger_color;
+  display: inline-block;
+  position:absolute;
+  right:50%;
+  top:10%;
+  z-index:1;
+
+}
+
+
+#wyniki{
+  list-style: none;
+  li{
+ display: inline-block;
+ padding-left: 10px;
+ color:$light_blue;
+ font-size: 45px;
+ 
+}
+
+}
+
+
+
+#correct{
+  list-style: none;
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.6;
+  li{
+  font-family: "AllerDisplay";
+  display: inline-block;
+  padding-left: 10px;
+  list-style: none;
+  background-color: $light_grey;
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  border-radius: 4px;
+  font-size: 50px;
+  float:left;
+  text-align: center;
+  vertical-align: middle;
+  color:white;
+
+}
 }

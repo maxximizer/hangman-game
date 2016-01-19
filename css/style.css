@@ -39,11 +39,11 @@ body {
     background-color: #4D5258; }
 
 .hangman {
-  position: relative;
+  position: absolute;
   width: 130px;
   height: 300px;
   display: inline-block;
-  top: 20%;
+  top: 19%;
   left: 8px; }
 
 .head, .eyes, .nose, .beard {
@@ -82,7 +82,7 @@ Head
     left: 23%; }
 
 .eyes {
-  /* Pupil */
+  /* eyes */
   width: 100%;
   top: 27%;
   left: -3px; }
@@ -292,20 +292,6 @@ Head
   left: 19%;
   top: 97%; }
 
-.missed_words {
-  font-family: "AllerDisplay";
-  color: #4D5258;
-  display: inline-block;
-  position: absolute;
-  right: 50%;
-  top: 10%;
-  z-index: 1; }
-  .missed_words h1 {
-    color: #4D71FA;
-    font-size: 60px;
-    line-height: 0;
-    letter-spacing: 20px; }
-
 .triangle {
   z-index: 0 !important;
   position: absolute;
@@ -318,19 +304,44 @@ Head
   border-left: 205px solid #4D71FA;
   transform: rotate(45deg); }
 
-#word {
+.missed_words {
+  font-family: "AllerDisplay";
+  color: #4D5258;
+  display: inline-block;
+  position: absolute;
+  right: 50%;
+  top: 10%;
+  z-index: 1; }
+
+#wyniki {
+  list-style: none; }
+  #wyniki li {
+    display: inline-block;
+    padding-left: 10px;
+    color: #4D71FA;
+    font-size: 45px; }
+
+#correct {
+  list-style: none;
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 1;
   opacity: 0.6; }
-  #word li {
-    list-style: none;
+  #correct li {
+    font-family: "AllerDisplay";
     display: inline-block;
+    padding-left: 10px;
+    list-style: none;
     background-color: #E6E6E8;
     width: 75px;
     height: 75px;
     margin: 5px;
-    border-radius: 4px; }
+    border-radius: 4px;
+    font-size: 50px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    color: white; }
 
 /*# sourceMappingURL=style.css.map */
