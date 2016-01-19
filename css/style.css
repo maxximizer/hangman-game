@@ -46,7 +46,7 @@ body {
   top: 20%;
   left: 8px; }
 
-.head, .hair, .hat, .glasses, .eyes, .nose, .beard {
+.head, .eyes, .nose, .beard {
   position: absolute; }
 
 /*======================================

@@ -4,6 +4,40 @@
     font-weight: normal;
     font-style: normal;
 }
+@mixin beard_cut{
+  background:$skin_color;
+  z-index:1;
+  width: 28px;
+  height: 13px;
+  border-radius: 5px;
+  position: absolute;
+  top:62%;
+}
+@mixin rectangle($width,$height,$color,$deg,$r1,$r2,$r3,$r4) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  transform:rotate($deg);
+  border-radius: $r1 $r2 $r3 $r4;
+}
+
+@mixin earings{
+height: 4px;
+width:4px;
+border-radius: 50%;
+background-color: $blue_color;
+z-index: 1;
+position: absolute;
+}
+
+@mixin hand($deg) {
+  height: 10px;
+  width: 22px;
+  border-radius: 15px 15px 0 0 ;
+  background-color: $skin_color;
+  position: absolute;
+  transform: rotate($deg);
+}
 
 $head_width: 90px;
 $background_color:#3B4163;
@@ -25,12 +59,14 @@ $guessed_word:#52555C;
   content: "";
   position: absolute;
 }
+
 body {
   padding: 0;
   margin: 0;
   background-color: $background_color;
   z-index: 10;
 }
+
 .inner {
   position: absolute;
   width: 80%;
@@ -42,8 +78,8 @@ body {
   right: 0;
   background-color: $inner_color;
   border-radius:12px;
-
 }
+
 .hanger{
 position: absolute;
 width: 130px;
@@ -58,16 +94,17 @@ top:9%;
   background-color: $hanger_color;
 }
 }
+
 .hangman{
   position: relative;
   width: 130px;
   height: 300px;
   display: inline-block;
-
   top:20%;
   left:8px;
 }
-.head, .hair, .hat, .glasses, .eyes, .nose, .beard {
+
+.head, .eyes, .nose, .beard {
   position: absolute;
 
 }
@@ -94,13 +131,13 @@ Head
 }
 
 &:after { /* scar */
-  width:8px;
-   height:9px;
+    width:8px;
+    height:9px;
     border:solid 2px $scar_color;
     border-color:transparent transparent transparent  $scar_color;
     border-radius: 92px 0 0 218%/46px;
-  top:10%;
-  left: 23%;
+    top:10%;
+    left: 23%;
 }
 }
 .eyes { /* Pupil */
@@ -111,19 +148,16 @@ Head
     display: inline-block;
     border-radius: 50%;
     list-style: none;
-  height: 10px;
-  width: 10px;
-background-color: $hanger_color;
-  margin-left: -20px;
-  margin-right: 44px;
-  top: 80px;
-  left: 50%;
-
+    height: 10px;
+    width: 10px;
+    background-color: $hanger_color;
+    margin-left: -20px;
+    margin-right: 44px;
+    top: 80px;
+    left: 50%;
 }
 }
 .beard { /* beard */
-
-
     height: 36px;
     width: 74px;
     background-color: $beard_color;
@@ -131,24 +165,16 @@ background-color: $hanger_color;
     left: 0;
     top:69%;
 }
-@mixin beard_cut{
-  background:$skin_color;
-  z-index:1;
-width: 28px;
-height: 13px;
-border-radius: 5px;
-position: absolute;
-top:62%;
-}
+
 .beard_cut_left{
-  @include beard_cut;
-  transform:rotate(-26deg);
-  left:4px;
+    @include beard_cut;
+    transform:rotate(-26deg);
+    left:4px;
 }
 .beard_cut_right{
     @include beard_cut;
-  transform:rotate(26deg);
-right:4px;
+    transform:rotate(26deg);
+    right:4px;
 }
 
 .nose{
@@ -170,22 +196,14 @@ right:4px;
   top: 31%;
 }
 
-@mixin earings{
-height: 4px;
-width:4px;
-border-radius: 50%;
-background-color: $blue_color;
-z-index: 1;
-position: absolute;
-}
 .earings_mouth{
-  @include earings ;
+@include earings ;
 left: 28%;
 top:84%;
 }
 
 .earings_right_ear{
-  @include earings ;
+@include earings ;
 left: 102%;
 top:63%;
 }
@@ -207,14 +225,6 @@ top:63%;
 
 }
 
-
-@mixin rectangle($width,$height,$color,$deg,$r1,$r2,$r3,$r4) {
-  width: $width;
-  height: $height;
-  background-color: $color;
-  transform:rotate($deg);
-  border-radius: $r1 $r2 $r3 $r4;
-}
 .first_rectangle{
   @include rectangle(50%,70%,$light_green,0,4px,0,0,4px) ;
   float:left;
@@ -243,14 +253,7 @@ top:63%;
     left:96%;
     top:42%;
 }
-@mixin hand($deg) {
-  height: 10px;
-  width: 22px;
-  border-radius: 15px 15px 0 0 ;
-  background-color: $skin_color;
-  position: absolute;
-  transform: rotate($deg);
-}
+
 .left_hand{
   @include hand(-135deg);
   left:10%;
@@ -292,7 +295,7 @@ top:63%;
 
 .missed_words{
   font-family: "AllerDisplay";
-color:$hanger_color;
+  color:$hanger_color;
   display: inline-block;
   position:absolute;
   right:50%;
@@ -315,9 +318,8 @@ bottom:-133px;
 	height: 0;
 	border-top: 205px solid transparent;
 	border-bottom: 205px solid transparent;
-
 	border-left: 205px solid $light_blue;
-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 #word{
 position: absolute;
@@ -327,7 +329,7 @@ z-index: 1;
 opacity: 0.6;
   li{
     list-style: none;
-      display: inline-block;
+    display: inline-block;
     background-color: $guess_word;
     width: 75px;
     height: 75px;
