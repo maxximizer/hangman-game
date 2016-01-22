@@ -55,7 +55,7 @@ $light_green:#88C657;
 $dark_green:#53A06E;
 $guess_word:	#E6E6E8;
 $guessed_word:#52555C;
-
+$yellow:#FFB900;
 
 *:before, *:after {
   content: "";
@@ -66,7 +66,38 @@ body {
   padding: 0;
   margin: 0;
   background-color: $background_color;
-  z-index: 10;
+  font-family: "AllerDisplay";
+  //z-index: 10;
+}
+.overlay{
+    opacity:0.8;
+    background-color:#ccc;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+.game_over{
+  color:white;
+font-size: 50px;
+  position: absolute;
+  left:39%;
+  top:33%;
+  z-index: 1001;
+}
+.button{
+  color:$yellow;
+font-size: 25px;
+  border:3px dashed $yellow;
+  width:auto;
+  padding:15px 35px;
+  border-radius:12px;
+  position: absolute;
+  left:42%;
+  top:44%;
+  z-index: 1001;
 }
 
 .inner {
@@ -327,7 +358,12 @@ bottom:-133px;
 
 
 #wyniki{
+    font-family: "AllerDisplay";
   list-style: none;
+  position: absolute;
+  float:left;
+  right:40%;
+  top:20%;
   li{
  display: inline-block;
  padding-left: 10px;

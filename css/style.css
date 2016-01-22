@@ -11,7 +11,37 @@ body {
   padding: 0;
   margin: 0;
   background-color: #3B4163;
-  z-index: 10; }
+  font-family: "AllerDisplay"; }
+
+.overlay {
+  opacity: 0.8;
+  background-color: #ccc;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1000; }
+
+.game_over {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  left: 39%;
+  top: 33%;
+  z-index: 1001; }
+
+.button {
+  color: #FFB900;
+  font-size: 25px;
+  border: 3px dashed #FFB900;
+  width: auto;
+  padding: 15px 35px;
+  border-radius: 12px;
+  position: absolute;
+  left: 42%;
+  top: 44%;
+  z-index: 1001; }
 
 .inner {
   position: absolute;
@@ -317,7 +347,12 @@ Head
   z-index: 1; }
 
 #wyniki {
-  list-style: none; }
+  font-family: "AllerDisplay";
+  list-style: none;
+  position: absolute;
+  float: left;
+  right: 40%;
+  top: 20%; }
   #wyniki li {
     display: inline-block;
     padding-left: 10px;

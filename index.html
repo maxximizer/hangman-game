@@ -10,13 +10,16 @@
 </head>
 
 <body>
+<div class="overlay display"></div>
+<div class="game_over display"> GAME OVER </div>
+<a class="button display">NEW WORD</a>
     <div class="inner">
         <div class="hanger">
         </div>
 
 
         <div class="hangman">
-            <div id="head" class="head display">
+            <div class="head display" id="head">
                 <ul class="eyes">
                     <li>
                     </li>
@@ -54,11 +57,11 @@
             </div>
 
 
-            <div id="neck" class="neck display">
+            <div class="neck display" id="neck">
             </div>
 
 
-            <div id="body" class="body display">
+            <div class="body display" id="body">
                 <div class="first_rectangle">
                 </div>
 
@@ -72,67 +75,102 @@
             </div>
 
 
-            <div id="left_sleeve" class="left_sleeve display">
-            </div>
-            <div id="left_hand" class="left_hand display">
+            <div class="left_sleeve display" id="left_sleeve">
             </div>
 
 
-
-            <div id="right_sleeve"  class="right_sleeve display">
-            </div>
-              <div id="right_hand" class="right_hand display">
-              </div>
-
-
-
-
-
-
-
-
-            <div id="right_leg" class="right_leg display">
+            <div class="left_hand display" id="left_hand">
             </div>
 
 
-            <div id="left_leg" class="left_leg display">
+            <div class="right_sleeve display" id="right_sleeve">
             </div>
 
 
-            <div  id="right_foot" class="right_foot display">
+            <div class="right_hand display" id="right_hand">
             </div>
 
 
-            <div id="left_foot" class="left_foot display">
+            <div class="right_leg display" id="right_leg">
+            </div>
+
+
+            <div class="left_leg display" id="left_leg">
+            </div>
+
+
+            <div class="right_foot display" id="right_foot">
+            </div>
+
+
+            <div class="left_foot display" id="left_foot">
             </div>
         </div>
 
 
         <div class="missed_words">
-          <p>YOU MISSED:</p>
-          <ul id="wyniki"></ul>
-
-      </div>
-      <div class="container">
-<ul id="correct">
-  <li data-pos='0'></li>
-  <li data-pos='1'></li>
-      <li data-pos='2'></li>
-            <li data-pos='3'></li>
-                  <li data-pos='4'></li>
-                        <li data-pos='5'></li>
-                        <li data-pos='6'></li>
-                            <li data-pos='7'></li>
-                                <li data-pos='8'></li>
-                                    <li data-pos='9'></li>
-                                        <li data-pos='10'></li>
-
-</ul>
-</div>
-<div class="triangle"></div>
+            <p>YOU MISSED:</p>
+        </div>
 
 
-<script src="js/main.js"></script>
-<script src="js/jquery-2.1.4.min.js"></script>
+        <ul id="wyniki">
+        </ul>
+
+
+        <div class="container">
+            <ul id="correct">
+                <li data-pos='0'>
+                </li>
+
+
+                <li data-pos='1'>
+                </li>
+
+
+                <li data-pos='2'>
+                </li>
+
+
+                <li data-pos='3'>
+                </li>
+
+
+                <li data-pos='4'>
+                </li>
+
+
+                <li data-pos='5'>
+                </li>
+
+
+                <li data-pos='6'>
+                </li>
+
+
+                <li data-pos='7'>
+                </li>
+
+
+                <li data-pos='8'>
+                </li>
+
+
+                <li data-pos='9'>
+                </li>
+
+
+                <li data-pos='10'>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="triangle">
+        </div>
+        <script src="js/jquery-2.1.4.min.js">
+        </script>
+        <script src="js/main2.js">
+        </script>
+    </div>
 </body>
 </html>
