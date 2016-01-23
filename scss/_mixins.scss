@@ -1,0 +1,42 @@
+// FONTS
+@font-face {
+    font-family: 'AllerDisplay';
+    src: url("../fonts/AllerDisplay.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+// mixins
+@mixin beard_cut{
+  background:$skin_color;
+  z-index:1;
+  width: 28px;
+  height: 13px;
+  border-radius: 5px;
+  position: absolute;
+  top:62%;
+}
+@mixin rectangle($width,$height,$color,$deg,$r1,$r2,$r3,$r4) {
+  width: $width;
+  height: $height;
+  background-color: $color;
+  transform:rotate($deg);
+  border-radius: $r1 $r2 $r3 $r4;
+}
+
+@mixin earings{
+height: 4px;
+width:4px;
+border-radius: 50%;
+background-color: $blue_color;
+z-index: 1;
+position: absolute;
+}
+
+@mixin hand($deg) {
+  height: 10px;
+  width: 22px;
+  border-radius: 15px 15px 0 0 ;
+  background-color: $skin_color;
+  position: absolute;
+  transform: rotate($deg);
+}
